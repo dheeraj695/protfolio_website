@@ -1,0 +1,1 @@
+"""HireMeAI FastAPI backend package."""

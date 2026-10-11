@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#211b69">
+  <meta name="description" content="Dheeraj Mishra — Python Full Stack AI Engineer, developer portfolio and AI assistant.">
+  <title>Dheeraj Mishra | Portfolio</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="desktop" id="home">
+    <header class="menubar">
+      <a class="apple" href="#home" aria-label="Home">●</a>
+      <a class="menu-brand" href="#home">Dheeraj's Portfolio</a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#projects" data-window="projects">Projects</a>
+        <a href="#about" data-window="about">About</a>
+        <a href="#contact" data-window="contact">Contact</a>
+        <a href="./resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </nav>
+
+      <div class="system-tray">
+        <button id="themeToggle" aria-label="Toggle theme" title="Toggle theme">◐</button>
+        <button id="searchToggle" aria-label="Search portfolio" title="Search">⌕</button>
+        <button id="infoToggle" aria-label="About this portfolio" title="Information">ⓘ</button>
+        <span id="clock">Loading time…</span>
+      </div>
+    </header>
+
+    <main class="desktop-area">
+      <div class="desktop-icons" aria-label="Portfolio folders">
+        <button class="desktop-icon" data-window="projects">
+          <span class="folder">📁</span><span>Projects</span>
+        </button>
+        <button class="desktop-icon" data-window="about">
+          <span class="folder">📁</span><span>About Me</span>
+        </button>
+        <button class="desktop-icon" data-window="skills">
+          <span class="folder">📁</span><span>Skills</span>
+        </button>
+        <button class="desktop-icon" data-window="experience">
+          <span class="folder">📁</span><span>Experience</span>
+        </button>
+        <a class="desktop-icon" href="./resume.pdf" target="_blank" rel="noopener">
+          <span class="pdf-icon">PDF</span><span>Resume.pdf</span>
+        </a>
+        <button class="desktop-icon" data-window="contact">
+          <span class="folder">📁</span><span>Contact</span>
+        </button>
+      </div>
+
+      <section class="welcome" aria-label="Portfolio introduction">
+        <p class="welcome-greeting">Hey, I'm Dheeraj! Welcome to my</p>
+        <h1>PORTFOLIO</h1>
+        <p class="welcome-sub">
+          <span>FULL STACK DEVELOPER</span>
+          <i>·</i>
+          <span>AI EXPLORER</span>
+          <i>·</i>
+          <span>PROBLEM SOLVER</span>
+        </p>
+        <button class="explore" data-window="projects">
+          Explore my work <span>↗</span>
+        </button>
+      </section>
+
+      <section class="window hidden" id="contentWindow"
+        role="dialog" aria-modal="false" aria-labelledby="windowTitle">
+        <div class="window-bar">
+          <div class="traffic">
+            <button class="close" id="closeWindow" aria-label="Close window"></button>
+            <button class="minimize" id="minimizeWindow" aria-label="Minimize window"></button>
+            <button class="maximize" id="maximizeWindow" aria-label="Maximize window"></button>
+          </div>
+          <strong id="windowTitle">Projects</strong>
+          <span class="window-spacer"></span>
+        </div>
+        <div class="window-content" id="windowContent"></div>
+      </section>
+
+      <section class="search-pop hidden" id="searchPop">
+        <label for="searchInput">Search portfolio</label>
+        <input id="searchInput" placeholder="Search projects, skills, experience…">
+        <div id="searchResults"></div>
+      </section>
+    </main>
+
+    <footer class="dock-wrap">
+      <div class="dock">
+        <button data-window="projects" aria-label="Projects" title="Projects">📁</button>
+        <button data-window="about" aria-label="About me" title="About me">👨🏻‍💻</button>
+        <a href="./resume.pdf" target="_blank" rel="noopener" aria-label="Resume" title="Resume">📄</a>
+        <button data-window="contact" aria-label="Contact" title="Contact">✉️</button>
+        <button id="askMe" class="ask-dock" aria-label="Open Dheeraj Assistant">
+          <span class="sparkle">✦</span><span>Ask Me</span>
+        </button>
+      </div>
+    </footer>
+  </div>
+
+  <aside class="chat-panel hidden" id="chatPanel" aria-label="Dheeraj Assistant">
+    <div class="chat-head">
+      <div class="bot-avatar">✦</div>
+      <div class="chat-title">
+        <strong>Ask Dheeraj</strong>
+        <small>Dheeraj Assistant · AI helper</small>
+      </div>
+      <button id="closeChat" aria-label="Close assistant">×</button>
+    </div>
+
+    <div class="chat-mode">
+      <button class="mode-button active" id="askMode" type="button">Ask me</button>
+      <button class="mode-button" id="composeMode" type="button">✉ Compose an email</button>
+    </div>
+
+    <div class="chat-intro">
+      <span class="online-dot"></span>
+      Ask about my profile, skills and projects, or compose a professional email.
+    </div>
+
+    <div class="chat-messages" id="chatMessages" aria-live="polite">
+      <div class="message bot">
+        Hi! 👋 I'm Dheeraj Assistant. Ask me about my skills and projects, or choose
+        <strong>Compose an email</strong> to draft a professional email.
+      </div>
+    </div>
+
+    <div class="quick-questions" id="quickQuestions">
+      <button type="button">What are your technical skills?</button>
+      <button type="button">Tell me about your projects</button>
+      <button type="button">Describe your experience</button>
+    </div>
+
+    <form id="chatForm">
+      <textarea id="chatInput" rows="1" required
+        placeholder="Ask a question…" aria-label="Message Dheeraj Assistant"></textarea>
+      <button type="submit" id="sendMessage" aria-label="Send message">➤</button>
+    </form>
+
+    <p class="chat-note" id="apiStatus">Connecting to assistant…</p>
+  </aside>
+
+  <script src="./script.js"></script>
+</body>
+</html>
